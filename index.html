@@ -220,7 +220,7 @@
     <div class="container">
         <header>
             <h1>Second Amendment Litigation Tracker</h1>
-            <div class="subtitle">ANJRPC — New Jersey Cases — Updated <span id="update-date">June 11, 2026</span></div>
+            <div class="subtitle">ANJRPC — New Jersey Cases — Updated <span id="update-date">June 13, 2026</span></div>
             <div class="filters">
                 <div class="filter-group">
                     <label>Court Level</label>
@@ -357,7 +357,7 @@
             {
                 id: "1:25-cv-13527", name: "Padua v. Platkin (Suppressors)", court: "D.N.J.", courtLevel: "District",
                 category: "Suppressor Ban", state: "NJ",
-                summary: "Six gun rights organizations challenging NJ's complete ban on firearm suppressors. Filed July 18, 2025. Companion case: FPC v. Platkin (3:25-cv-13522). Pretrial factual discovery closed March 12, 2026; telephone status conference held May 22, 2026; dispositive motions due July 10, 2026.",
+                summary: "Six gun rights organizations challenging NJ's complete ban on firearm suppressors. Filed July 18, 2025. Pretrial factual discovery closed March 12, 2026; telephone status conference held May 22, 2026; dispositive motions due July 10, 2026.",
                 plaintiffs: "ASA, NRA, SCI, SAF, ANJRPC, NJFOS, Silencer Shop",
                 defendants: "Matthew Platkin (NJ AG), Patrick Callahan (State Police)",
                 status: "Active — dispositive motions ahead", statusClass: "status-motions",
@@ -399,15 +399,15 @@
             {
                 id: "23-3058", name: "Defense Distributed v. Davenport", court: "Third Circuit", courtLevel: "Appellate",
                 category: "3D-Printed Firearms / First Amendment", state: "NJ",
-                summary: "Challenges NJ ban on distributing 3D-printed firearm files. Panel ruled Feb 12, 2026 that purely functional computer code is not protected speech; dismissed with prejudice. SAF filed petition for en banc rehearing March 2026.",
+                summary: "Challenges NJ ban on distributing 3D-printed firearm files. Panel ruled Feb 12, 2026 that purely functional computer code is not protected speech; dismissed with prejudice. SAF filed petition for en banc rehearing March 2026. Third Circuit denied rehearing — order dated April 10, opinion filed publicly April 20, 2026. Panel ruling stands; plaintiffs' remaining option is a Supreme Court cert petition.",
                 plaintiffs: "Defense Distributed, Second Amendment Foundation",
                 defendants: "New Jersey AG (Davenport)",
-                status: "En banc petition filed", statusClass: "status-enbanc-pending",
+                status: "En banc denied — cert window open", statusClass: "status-denied",
                 statusGroup: "active",
-                nextPlaintiffs: "Await en banc decision; if denied, petition SCOTUS",
-                nextDefendants: "Oppose en banc rehearing",
-                lastEvent: "SAF filed en banc rehearing petition March 2026", lastDate: "2026-03-01",
-                nextMilestone: "Third Circuit en banc rehearing decision", milestoneDate: "2026-09-01",
+                nextPlaintiffs: "Petition SCOTUS for certiorari (deadline ~July 9, 2026) or case ends",
+                nextDefendants: "Oppose any cert petition",
+                lastEvent: "Third Circuit denied en banc rehearing (order April 10; opinion filed April 20, 2026)", lastDate: "2026-04-20",
+                nextMilestone: "SCOTUS cert petition deadline ~July 9, 2026", milestoneDate: "2026-07-09",
                 anjrpc: false, nj: true
             },
             {
@@ -481,23 +481,23 @@
                 anjrpc: false, nj: true
             },
             {
-                id: "3:25-cv-13522", name: "FPC v. Platkin (Suppressors)", court: "D.N.J.", courtLevel: "District",
-                category: "Suppressor Ban", state: "NJ",
-                summary: "FPC companion case to Padua v. Platkin challenging NJ's complete ban on firearm suppressors. Filed same day as Padua (July 18, 2025).",
-                plaintiffs: "Firearms Policy Coalition, individual plaintiffs",
-                defendants: "Matthew Platkin (NJ AG), Patrick Callahan (State Police)",
-                status: "Active — early stage", statusClass: "status-active",
+                id: "3:25-cv-13522", name: "FPC v. Davenport (SBR Ban)", court: "D.N.J.", courtLevel: "District",
+                category: "Short-Barreled Rifle Ban", state: "NJ",
+                summary: "FPC challenge to NJ's ban on short-barreled rifles (SBRs). Filed July 18, 2025 (same day as the Padua suppressor case) as FPC v. Platkin; renamed FPC v. Davenport. Previously mischaracterized as a suppressor companion case — corrected June 12, 2026. First Amended Complaint Nov 10, 2025; state answered Dec 8, 2025. Plaintiffs moved for summary judgment Feb 18, 2026, and filed an amended summary judgment motion March 17, 2026, seeking to enjoin the SBR ban.",
+                plaintiffs: "Firearms Policy Coalition, Luigi Dececco, Richard Ford, Daniel Francisco, Eric Lowmaster, James Shockley, High Caliber Ordinance LLC, Louie G's Outdoors",
+                defendants: "Jennifer Davenport (NJ AG), Jeanne Hengemuhle (Acting State Police Superintendent)",
+                status: "Summary judgment — motion pending", statusClass: "status-motions",
                 statusGroup: "active",
-                nextPlaintiffs: "Continue discovery and motion practice",
-                nextDefendants: "Defend suppressor ban constitutionality",
-                lastEvent: "Complaint filed July 18, 2025", lastDate: "2025-07-18",
-                nextMilestone: "Discovery and motions ongoing", milestoneDate: "2026-12-01",
+                nextPlaintiffs: "Await ruling on amended summary judgment motion",
+                nextDefendants: "Oppose summary judgment; defend SBR ban",
+                lastEvent: "Plaintiffs' amended motion for summary judgment filed March 17, 2026", lastDate: "2026-03-17",
+                nextMilestone: "Ruling on summary judgment motion", milestoneDate: "2026-12-01",
                 anjrpc: false, nj: true
             },
             {
                 id: "MER-L-TBD-26", name: "Petrolino v. NJ State Police", court: "NJ Superior Court (Mercer)", courtLevel: "State",
                 category: "Records Access / OPRA", state: "NJ",
-                summary: "2A journalist John Petrolino challenges NJSP denial of OPRA requests for demographic data on retired law enforcement officer carry permits. Petrolino previously uncovered racial disparities in NJ permit-to-carry denials. NJSP denied requests citing N.J.A.C. 13:54-1.15 confidentiality rule. Claims filed under OPRA, common law right of access, and NJ Civil Rights Act. Filed Feb 27, 2026 before Judge Robert T. Lougy. A decision was expected by late April 2026, but as of June 11, 2026 the court has not issued a ruling and the matter remains under advisement.",
+                summary: "2A journalist John Petrolino challenges NJSP denial of OPRA requests for demographic data on retired law enforcement officer carry permits. Petrolino previously uncovered racial disparities in NJ permit-to-carry denials. NJSP denied requests citing N.J.A.C. 13:54-1.15 confidentiality rule. Claims filed under OPRA, common law right of access, and NJ Civil Rights Act. Filed Feb 27, 2026 before Judge Robert T. Lougy. A decision was expected by late April 2026, but as of June 13, 2026 the court has not issued a ruling and the matter remains under advisement.",
                 plaintiffs: "John Petrolino",
                 defendants: "New Jersey State Police, Trooper 'X' (records custodian)",
                 status: "Decision pending", statusClass: "status-pending",
@@ -513,11 +513,11 @@
             { date: "2026-07-01", title: "SCOTUS Decisions — Wolford & Hemani", desc: "Supreme Court expected to decide private property carry (Wolford) and drug user prohibition (Hemani)" },
             { date: "2026-06-30", title: "ANJRPC v. Platkin — En Banc Decision Expected", desc: "NJ assault weapons and magazine ban case. En banc oral arguments held Oct 15, 2025. Stay in place — AWB and mag ban enforceable until ruling." },
             { date: "2026-09-30", title: "Koons/Siegel En Banc Decision Expected", desc: "Third Circuit decision on NJ sensitive places and carry restrictions" },
-            { date: "2026-07-10", title: "Padua v. Platkin — Dispositive Motions Due", desc: "Deadline for dispositive motions in NJ suppressor ban challenge (companion case: FPC v. Platkin). Status conference held May 22, 2026." },
+            { date: "2026-07-10", title: "Padua v. Platkin — Dispositive Motions Due", desc: "Deadline for dispositive motions in NJ suppressor ban challenge. Status conference held May 22, 2026." },
             { date: "2026-08-06", title: "Bergmann-Schoch v. Platkin — Status Conference", desc: "Summary judgment cross-motions fully briefed as of May 28, 2026. Status conference on hollow point ammo ban challenge." },
-            { date: "2026-09-01", title: "Defense Distributed v. Davenport — En Banc Rehearing Decision", desc: "Third Circuit decides whether to rehear 3D-printed firearms files case en banc" },
-            { date: "2026-04-28", title: "Petrolino v. NJ State Police — Decision Expected", desc: "Mercer County Superior Court decision on OPRA challenge to NJSP denial of retired LEO carry permit demographic data. Expected late April 2026; not yet issued as of June 11, 2026 — matter under advisement." },
-            { date: "2026-12-01", title: "NJ District Court Cases — Progress Check", desc: "Padua & FPC (suppressors), Struck/Benton (gun rationing/permits), Hague (under-21), NSSF & Sig Sauer (liability) motion practice" }
+            { date: "2026-07-09", title: "Defense Distributed v. Davenport — SCOTUS Cert Deadline", desc: "Third Circuit denied en banc rehearing (order April 10, opinion filed April 20, 2026). Panel ruling stands; approximate deadline for plaintiffs to petition the Supreme Court." },
+            { date: "2026-04-28", title: "Petrolino v. NJ State Police — Decision Expected", desc: "Mercer County Superior Court decision on OPRA challenge to NJSP denial of retired LEO carry permit demographic data. Expected late April 2026; not yet issued as of June 13, 2026 — matter under advisement." },
+            { date: "2026-12-01", title: "NJ District Court Cases — Progress Check", desc: "Padua (suppressors), FPC v. Davenport (SBR ban), Struck/Benton (gun rationing/permits), Hague (under-21), NSSF & Sig Sauer (liability) motion practice" }
         ];
         const COLORS = ['#2563eb','#dc2626','#16a34a','#d97706','#7c3aed','#0891b2','#be185d','#4338ca','#059669','#b45309','#e11d48','#0d9488','#6d28d9','#ca8a04','#475569','#2dd4bf'];
         class Dashboard {
@@ -530,7 +530,7 @@
                 this.init();
             }
             init() {
-                document.getElementById('update-date').textContent = 'June 11, 2026';
+                document.getElementById('update-date').textContent = 'June 13, 2026';
                 this.populateFilters();
                 this.render();
             }

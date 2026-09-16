@@ -278,6 +278,14 @@
                 <tbody id="table-body"></tbody>
             </table>
         </section>
+        <section class="table-section">
+            <h3>Other Cases of Interest</h3>
+            <div class="table-count">Out-of-state cases whose outcome bears on New Jersey litigation. Not counted in the KPIs, charts or filters above.</div>
+            <table>
+                <thead id="other-table-head"></thead>
+                <tbody id="other-table-body"></tbody>
+            </table>
+        </section>
         <footer>
             ANJRPC Second Amendment Litigation Tracker — Data sourced from Gun Case Tracker by FPC.org, PACER / CourtListener (RECAP) dockets, SCOTUSblog, NRA-ILA, SAF, Duke Firearms Law Center, NJ Attorney General press releases — For informational purposes only, not legal advice
         </footer>
@@ -564,6 +572,25 @@
             { date: "2026-09-28", title: "Aliaj v. Fort Lee PD — Rochelle Park Reply Brief Due", desc: "Judge Esther Salas entered a text order (ECF 61) on September 15, 2026 granting the Township of Rochelle Park a two-week extension and directing it to file its reply brief by September 28, 2026. The order's text also cleans up numbering the public docket had left ambiguous: it identifies ECF 55 as plaintiffs' opposition, ECF 54 (not 53) as Rochelle Park's motion to dismiss, and ECF 57 as a letter request rather than a formal motion — which supersedes the October 19, 2026 return date the clerk had set for ECF 57. When Rochelle Park files, all four motions to dismiss the First Amended Complaint will be fully briefed and ripe for decision on whether SAF and NJFOS's claim that Bergen County seized firearms and denied permits based on who the owner lived with survives the pleadings." },
             { date: "2026-12-01", title: "NJ District Court Cases — Progress Check", desc: "Padua (suppressors), FPC v. Davenport (SBR ban), Struck/Benton (gun rationing/permits), Hague (under-21), NSSF & Sig Sauer (liability) motion practice" }
         ];
+        // Out-of-state cases that do not appear in the KPIs, charts, filters or Case Details table,
+        // but whose outcome bears directly on New Jersey litigation. Tracked separately by design.
+        const OTHER_CASES = [
+            {
+                id: "26-46",
+                name: "Calce v. City of New York",
+                court: "U.S. Supreme Court (cert petition)",
+                state: "NY",
+                category: "Electronic Arms / Common Use Burden",
+                status: "Response ordered — City's brief due Oct 8, 2026",
+                statusClass: "status-pending",
+                whyItMatters: "The question presented is not really about stun guns — it is about WHO BEARS THE BURDEN of proving an arm is in 'common use' at Bruen's first step, and what evidence is required to carry it. That is the same doctrinal machinery the en banc Third Circuit applied to strike New Jersey's assault firearms and magazine bans in ANJRPC v. Platkin on July 17, 2026, and the same point the Cheeseman plaintiffs pressed in their June 26, 2026 Rule 28(j) letter arguing that common use is not part of Bruen's plain-text first step. If the Supreme Court takes Calce and holds that plaintiffs may be defeated on an evidentiary record rather than on the merits, states gain a route around the Second Amendment that does not depend on the substance of any particular ban. Watch it alongside Viramontes and Grant as New Jersey prepares its certiorari petition, due October 15, 2026.",
+                summary: "A Second Amendment Foundation and Firearms Policy Coalition challenge to New York City's ban on civilian possession of stun guns and Tasers — 'electronic arms' marketed as less-lethal self-defense tools. Filed October 5, 2021 in the Southern District of New York (1:21-cv-08208) by individual plaintiffs Nunzio Calce, Allen Chan, Shaya Greenfield, Amanda Kennedy and Raymond Pezzoli together with SAF and FPC, against the City of New York and the NYPD Commissioner. The district court granted summary judgment to the City. The Second Circuit (No. 25-861) heard argument March 25, 2026 and AFFIRMED by summary order on April 13, 2026, holding that the plaintiffs bore the burden of establishing that stun guns and Tasers are in common use for lawful purposes at the first stage of the Bruen analysis, and faulting them for failing to introduce sufficient admissible evidence in the district court. SAF filed its petition for a writ of certiorari on July 7, 2026, docketed as No. 26-46. The City filed a WAIVER of its right to respond on August 6, 2026 — the routine move when a respondent expects a petition to be denied without briefing. ON SEPTEMBER 8, 2026 THE SUPREME COURT OVERRODE THAT WAIVER AND ORDERED NEW YORK CITY TO RESPOND, with the brief due October 8, 2026. A call for a response after a waiver signals that at least one Justice wants the petition taken seriously, and commentators have framed the case as 'Caetano 2.0' — a reference to Caetano v. Massachusetts (2016), in which a unanimous Court summarily rejected the position that stun guns fall outside the Second Amendment. NOTE FOR MEMBERS: this is a New York case and changes nothing about New Jersey law; New Jersey separately regulates electronic arms by statute.",
+                lastEvent: "SCOTUS ordered New York City to respond to the certiorari petition, overriding the City's August 6 waiver — September 8, 2026",
+                lastDate: "2026-09-08",
+                nextMilestone: "New York City's brief in opposition due October 8, 2026; distribution for conference to follow",
+                milestoneDate: "2026-10-08"
+            }
+        ];
         const COLORS = ['#2563eb','#dc2626','#16a34a','#d97706','#7c3aed','#0891b2','#be185d','#4338ca','#059669','#b45309','#e11d48','#0d9488','#6d28d9','#ca8a04','#475569','#2dd4bf'];
         class Dashboard {
             constructor(data) {
@@ -578,6 +605,39 @@
                 document.getElementById('update-date').textContent = 'September 16, 2026';
                 this.populateFilters();
                 this.render();
+                try { this.renderOtherTable(); } catch (e) { console.error('Other cases render error:', e); }
+            }
+            renderOtherTable() {
+                const head = document.getElementById('other-table-head');
+                const body = document.getElementById('other-table-body');
+                if (!head || !body) return;
+                const cols = ['Case #','Case Name','Court','Category','Status','Last Update',''];
+                head.innerHTML = '<tr>' + cols.map(c => `<th>${c}</th>`).join('') + '</tr>';
+                let html = '';
+                OTHER_CASES.forEach((c, i) => {
+                    html += `<tr>
+                        <td style="overflow-wrap:break-word;font-family:monospace;font-size:12px">${c.id}</td>
+                        <td><strong>${c.name}</strong></td>
+                        <td>${c.court}</td>
+                        <td><span class="category-tag">${c.category}</span></td>
+                        <td><span class="status-badge ${c.statusClass}">${c.status}</span></td>
+                        <td style="white-space:nowrap">${c.lastDate || 'N/A'}</td>
+                        <td><button class="expand-btn" onclick="dashboard.toggleOther(${i})">Details</button></td>
+                    </tr>`;
+                    html += `<tr class="detail-row" id="odetail-${i}"><td colspan="7">
+                        <div style="margin-bottom:8px;font-size:13px">${c.summary}</div>
+                        <div class="detail-grid">
+                            <div><div class="detail-label">Why It Matters to New Jersey</div><div class="detail-value">${c.whyItMatters}</div></div>
+                            <div><div class="detail-label">Last Significant Event</div><div class="detail-value">${c.lastEvent}</div></div>
+                            <div><div class="detail-label">Next Milestone</div><div class="detail-value">${c.nextMilestone || 'N/A'}</div></div>
+                        </div>
+                    </td></tr>`;
+                });
+                body.innerHTML = html;
+            }
+            toggleOther(i) {
+                const row = document.getElementById('odetail-'+i);
+                if (row) row.classList.toggle('open');
             }
             populateFilters() {
                 this.populateSelect('filter-court', 'courtLevel');

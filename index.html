@@ -220,7 +220,7 @@
     <div class="container">
         <header>
             <h1>Second Amendment Litigation Tracker</h1>
-            <div class="subtitle">ANJRPC — New Jersey Cases — Updated <span id="update-date">October 8, 2026</span></div>
+            <div class="subtitle">ANJRPC — New Jersey Cases — Updated <span id="update-date">October 9, 2026</span></div>
             <div class="filters">
                 <div class="filter-group">
                     <label>Court Level</label>
@@ -463,14 +463,14 @@
             {
                 id: "3:25-cv-08826", name: "Hague v. Platkin", court: "D.N.J.", courtLevel: "District",
                 category: "Under-21 Restrictions", state: "NJ",
-                summary: "Challenges NJ laws barring adults under 21 from purchasing, possessing or carrying handguns, and the federal ban on FFL transfers to under-21 buyers. Filed June 2025 by SAF and NJFOS. The case remains at an early stage with no dispositive motions pending. Federal defendant Todd Blanche filed an Answer to the complaint on September 8, 2026 (ECF 66) — the case is now at issue, with no motion to dismiss having been filed. NJ's restrictions on handgun purchase, possession and carry by adults under 21 remain fully in force.",
+                summary: "Challenges NJ laws barring adults under 21 from purchasing, possessing or carrying handguns, and the federal ban on FFL transfers to under-21 buyers. Filed June 2025 by SAF and NJFOS. The case remains at an early stage with no dispositive motions pending. Federal defendant Todd Blanche filed an Answer to the complaint on September 8, 2026 (ECF 66) — the case is now at issue, with no motion to dismiss having been filed. STATUS AS OF OCTOBER 9, 2026: three new docket entries (ECF 67-68 on October 8 and ECF 69 on October 9) appeared in RECAP without readable text, so their substance is unknown; no ruling has been reported. NJ's restrictions on handgun purchase, possession and carry by adults under 21 remain fully in force.",
                 plaintiffs: "Lily Hague, SAF, New Jersey Firearms Owners Syndicate",
                 defendants: "Matthew Platkin (NJ AG)",
                 status: "Active — early stage", statusClass: "status-active",
                 statusGroup: "active",
                 nextPlaintiffs: "Continue litigation",
                 nextDefendants: "Defend age restrictions",
-                lastEvent: "Federal defendant Todd Blanche filed an Answer to the complaint (ECF 66, Sept 8, 2026)", lastDate: "2026-09-08",
+                lastEvent: "Three new docket entries (ECF 67-69, Oct 8-9, 2026) — text unavailable in RECAP; follows federal defendant's Answer (ECF 66, Sept 8)", lastDate: "2026-10-09",
                 nextMilestone: "Scheduling order and discovery to follow the Answer; no motion to dismiss was filed", milestoneDate: "2026-12-01",
                 anjrpc: false, nj: true
             },
@@ -627,7 +627,7 @@
                 this.init();
             }
             init() {
-                document.getElementById('update-date').textContent = 'October 8, 2026';
+                document.getElementById('update-date').textContent = 'October 9, 2026';
                 this.populateFilters();
                 this.render();
                 try { this.renderOtherTable(); } catch (e) { console.error('Other cases render error:', e); }
